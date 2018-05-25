@@ -2,6 +2,11 @@
   "name": "property-drill",
   "version": "1.0.0",
   "keywords": [
+    "object",
+    "array",
+    "fetch",
+    "deep",
+    "get",
     "property",
     "drill"
   ],
