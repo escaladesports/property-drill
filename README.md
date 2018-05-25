@@ -1,25 +1,36 @@
-# JavaScript Module Boilerplate
+# property-drill
 
-A simple JavaScript boilerplate that outputs to ES5 and ES6.
+Safely find deep properties in objects and arrays.
 
-## Getting started
+## Installation
 
-```bash
-git clone git@github.com:escaladesports/javascript-module-boilerplate.git --depth=1 your-module
-cd your-module
-yarn
-yarn reset
+With npm:
+
+```npm
+npm install --save property-drill
 ```
 
-Also make sure to edit the `package.json` file with a new name, version number, author, and anything else you might need.
+Or Yarn:
+
+```yarn
+yarn add property-drill
+```
 
 ## Usage
 
-- `yarn build`: Build browser and node versions of the module
-- `yarn dev`: Run live dev mode
-- `yarn test`: Run mocha tests
-- `yarn analyze`: View bundle sizes
+```javascript
+var propDrill = require('property-drill')
 
-# Unit Testing
+var obj = {
+   a: {
+      b: ['c', 'd', 'e']
+   }
+}
 
-Unit tests will be performed pre-commit and pre-publish. You can change this in the npm scripts if this doesn't work well with your use case.
+var prop = propDrill(obj, `a`, `b`, 0) // Returns "c"
+```
+
+## Why?
+
+While there are tons of modules that do the same thing, many of them do not search within arrays or throw errors if you search deeper than the object is. The ones that meet these requirements take strings as your second argument. This can lead to innaccurate results when mixing objects and arrays and can also be much slower when more powerful regex is used.
+
