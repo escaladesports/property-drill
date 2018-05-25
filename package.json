@@ -14,10 +14,7 @@
   "license": "MIT",
   "scripts": {
     "build": "esca-scripts build --no-react --no-css",
-    "bundle": "esca-scripts bundle --src src/index.js --no-react --no-css --dist dist-browser",
-    "dev": "esca-scripts dev --no-react --no-css",
     "prepublishOnly": "npm run build",
-    "reset": "esca-scripts reset",
     "test": "npm run build && esca-scripts test --no-react --no-css",
     "travis": "opn https://travis-ci.org/escaladesports/property-drill/branches"
   },

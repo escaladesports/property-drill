@@ -17,4 +17,4 @@ function propDrill() {
 	}
 }
 
-export default propDrill
+module.exports = propDrill
